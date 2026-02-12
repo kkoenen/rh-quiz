@@ -22,7 +22,7 @@ A Red Hat-themed quiz application that generates multiple-choice quizzes from an
 │  │  + Static Frontend  │   │
 │  └──────────┬──────────┘   │
 │             │              │
-│  📁 SQLite (/data/quiz.db) │
+│   SQLite (/data/quiz.db)   │
 └──────────────┬─────────────┘
                │ HTTP
                ▼
