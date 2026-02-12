@@ -1,0 +1,52 @@
+# Subjects that qualify for the 2x score multiplier.
+# Matching is fuzzy: if the user-provided subject closely resembles
+# any entry here, the multiplier is applied.
+#
+# Add or remove entries as needed.
+
+subjects:
+  - OpenShift
+  - OpenShift Container Platform
+  - OpenShift Virtualization
+  - OpenShift AI
+  - OpenShift Data Foundation
+  - OpenShift High Availability
+  - OpenShift Networking
+  - OpenShift Security
+  - OpenShift GitOps
+  - OpenShift Pipelines
+  - OpenShift Service Mesh
+  - OpenShift Serverless
+  - Red Hat Enterprise Linux
+  - RHEL
+  - Red Hat Satellite
+  - Red Hat Ansible
+  - Ansible Automation Platform
+  - Red Hat Identity Management
+  - Red Hat CloudForms
+  - Red Hat Quay
+  - Red Hat Advanced Cluster Management
+  - ACM
+  - Red Hat Advanced Cluster Security
+  - ACS
+  - Red Hat Single Sign-On
+  - Keycloak
+  - Red Hat AMQ
+  - Red Hat Fuse
+  - Red Hat 3scale
+  - Red Hat OpenStack Platform
+  - Red Hat Ceph Storage
+  - Red Hat Gluster Storage
+  - Red Hat Virtualization
+  - Podman
+  - Buildah
+  - Skopeo
+  - CRI-O
+  - Kubernetes
+  - Linux Containers
+  - SELinux
+  - Systemd
+  - Red Hat Certified Engineer
+  - RHCE
+  - RHCSA
+  - Red Hat Certified Architect

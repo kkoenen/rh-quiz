@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: rh-quiz
+  labels:
+    app: rh-quiz
+    app.kubernetes.io/name: rh-quiz
+    app.kubernetes.io/component: server
+spec:
+  to:
+    kind: Service
+    name: rh-quiz
+    weight: 100
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect

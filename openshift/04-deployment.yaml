@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rh-quiz
+  labels:
+    app: rh-quiz
+    app.kubernetes.io/name: rh-quiz
+    app.kubernetes.io/component: server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rh-quiz
+  strategy:
+    type: Recreate              # SQLite doesn't support concurrent writers
+  template:
+    metadata:
+      labels:
+        app: rh-quiz
+    spec:
+      containers:
+        - name: rh-quiz
+          image: rh-quiz:latest # Overwritten by trigger below
+          ports:
+            - containerPort: 8000
+              protocol: TCP
+          envFrom:
+            - secretRef:
+                name: rh-quiz-config
+          volumeMounts:
+            - name: data
+              mountPath: /data
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 10
+            periodSeconds: 30
+            timeoutSeconds: 5
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 3
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: rh-quiz-data
+  triggers:
+    - type: ImageChange
+      imageChangeParams:
+        automatic: true
+        containerNames:
+          - rh-quiz
+        from:
+          kind: ImageStreamTag
+          name: rh-quiz:latest

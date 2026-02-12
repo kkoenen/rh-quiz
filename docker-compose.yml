@@ -1,0 +1,20 @@
+services:
+  rh-quiz:
+    build: .
+    container_name: rh-quiz
+    ports:
+      - "8000:8000"
+    volumes:
+      - quiz-data:/data
+    env_file:
+      - .env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  quiz-data:
+    driver: local

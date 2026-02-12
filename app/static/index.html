@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#151515">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>RH Quiz</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="icon" href="/static/logo.png" type="image/png">
+</head>
+<body>
+
+<div id="toast-container" class="toast-container"></div>
+
+<div id="app">
+
+  <!-- Header (hidden on welcome) -->
+  <header class="app-header" id="app-header" style="display:none">
+    <div class="logo-group">
+      <img src="/static/logo.png" alt="Red Hat">
+      <h1>RH Quiz</h1>
+    </div>
+    <nav class="header-nav">
+      <button class="nav-btn" data-screen="subject" id="nav-quiz">Quiz</button>
+      <button class="nav-btn" data-screen="leaderboard" id="nav-lb">Board</button>
+    </nav>
+  </header>
+
+  <!-- Screen: Welcome / Name Entry -->
+  <div class="screen active" id="screen-welcome">
+    <div class="welcome-screen">
+      <img src="/static/logo.png" alt="Red Hat" class="welcome-logo">
+      <h2>Welcome to<br><span>RH Quiz</span></h2>
+      <p>Test your knowledge, challenge your peers, and climb the leaderboard.</p>
+      <div class="input-group">
+        <input
+          type="text"
+          class="input-field"
+          id="input-name"
+          placeholder="What's your name?"
+          maxlength="50"
+          autocomplete="off"
+        >
+        <button class="btn btn-primary btn-block" id="btn-start" disabled>Let's go</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen: Subject Input -->
+  <div class="screen" id="screen-subject">
+    <div class="subject-screen">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
+        <div class="user-badge" id="user-badge">
+          <div class="avatar" id="user-avatar">?</div>
+          <span id="user-display-name">User</span>
+        </div>
+        <button class="btn-ghost" id="btn-change-name">Change name</button>
+      </div>
+
+      <div class="subject-card">
+        <h2>Pick a subject</h2>
+        <p>Enter any topic and we'll generate 3 questions to test your knowledge.</p>
+        <div class="input-group">
+          <input
+            type="text"
+            class="input-field"
+            id="input-subject"
+            placeholder='e.g. "OpenShift Networking"'
+            maxlength="200"
+            autocomplete="off"
+          >
+          <button class="btn btn-primary btn-block" id="btn-generate" disabled>Generate Quiz</button>
+        </div>
+        <div class="multiplier-hint">
+          <span class="icon">⚡</span>
+          <span>Red Hat & OpenShift topics get a <strong>2× score multiplier!</strong></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen: Loading / Generating -->
+  <div class="screen" id="screen-loading">
+    <div class="loading-screen">
+      <div class="loading-gif-container">
+        <img id="loading-gif" src="" alt="Loading fun">
+      </div>
+      <div class="loading-text">Generating your quiz<span class="loading-dots"></span></div>
+      <div class="loading-sub" id="loading-subject">About: OpenShift</div>
+    </div>
+  </div>
+
+  <!-- Screen: Quiz Questions -->
+  <div class="screen" id="screen-quiz">
+    <div class="quiz-screen" id="quiz-container"></div>
+    <div class="quiz-submit-bar" id="quiz-submit-bar" style="display:none">
+      <button class="btn btn-primary btn-block" id="btn-submit-quiz" disabled>Submit Answers</button>
+    </div>
+  </div>
+
+  <!-- Screen: Results -->
+  <div class="screen" id="screen-results">
+    <div class="results-screen" id="results-container"></div>
+  </div>
+
+  <!-- Screen: Leaderboard -->
+  <div class="screen" id="screen-leaderboard">
+    <div class="leaderboard-screen" id="leaderboard-container"></div>
+  </div>
+
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
