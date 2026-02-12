@@ -46,6 +46,9 @@
 html {
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 body {
@@ -77,6 +80,7 @@ body::before {
   max-width: 480px;
   margin: 0 auto;
   padding: 0 16px;
+  margin-top: 30px;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -288,13 +292,21 @@ body::before {
 
 .btn-ghost {
   background: transparent;
+  border: 1px solid var(--rh-gray-700);
   color: var(--text-secondary);
-  padding: 8px 16px;
-  font-size: 0.85rem;
+  font-family: 'Red Hat Text', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition);
 }
 
 .btn-ghost:hover {
-  color: var(--text-primary);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--rh-white);
 }
 
 .btn-block {
