@@ -18,9 +18,12 @@
   const LOADING_GIFS = [
     'https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif',
     'https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif',
-    'https://media.giphy.com/media/o0vwzuFwCGAFO/giphy.gif',
     'https://media.giphy.com/media/13borq7Zo2kulO/giphy.gif',
     'https://media.giphy.com/media/nR4L10XlJcSeQ/giphy.gif',
+    'https://media2.giphy.com/media/P8CC8QCewsRhRTTQpx/giphy.gif',
+    'https://media.giphy.com/media/vhsNmFjuN4WDS/giphy.gif',
+    'https://media.giphy.com/media/PQPNk70li9WTe/giphy.gif',
+    'https://media1.giphy.com/media/DPvLoEbZBy4xAJpuD7/giphy.gif',
     'https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif',
     'https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif',
     'https://media.giphy.com/media/VbnUQpnihPSIgIXuZv/giphy.gif',
